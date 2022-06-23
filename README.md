@@ -23,8 +23,6 @@ We evaluate our EchoGraph model on the EchoNet benchmark dataset.
 Compared to semantic segmentation, GCNs show accurate segmentation and improvements in robustness and inference run-time. 
 EF is computed simultaneously to segmentations and our method also obtains state-of-the-art ejection fraction estimation
 
- [<img src="./figures/GCN_MobileNet2_single_frame.gif" width="800" caption="Automatic prediction"/>](./figures/GCN_MobileNet2_single_frame.gif)
-
 ## Paper
 This is the source code for MICCAI 2022 paper: [Light-weight spatio-temporal graphs for segmentation and ejection fraction prediction in cardiac ultrasound](link_to_arxiv)
 
@@ -40,6 +38,9 @@ See [INSTALL.md/](./INSTALL.md) for environment setup.
 ## Getting stated
 See [GETTING_STARTED.md](./GETTING_STARTED.md) to get started with training and testing the echographs model. 
 
+## Results 
+[<img src="./figures/GCN_MobileNet2_single_frame.gif" width="800"/>](./figures/GCN_MobileNet2_single_frame.gif)
+These examples show video sequences with model prediction. Although the single frame Echograph was only trained on the keyframes ED (end diastole) and ES (end systole) it produces accurate and consistent prediction across all other frames.
 
 ## Citation
 If you feel helpful of this work, please cite it.
