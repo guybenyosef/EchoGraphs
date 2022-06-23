@@ -21,15 +21,19 @@ In particular, segmentations of the left ventricle can be used to derive ventric
 In this paper we propose a new automated method called EchoGraphs for predicting ejection fraction and segmenting the left ventricle by detecting anatomical keypoints. Models for direct coordinate regression based on Graph Convolutional Networks (GCNs) are used to detect the keypoints. GCNs can learn to represent the cardiac shape based on local appearance of each keypoint, as well as global spatial and temporal structures of all keypoints combined. 
 We evaluate our EchoGraph model on the EchoNet benchmark dataset. 
 Compared to semantic segmentation, GCNs show accurate segmentation and improvements in robustness and inference run-time. 
-EF is computed simultaneously to segmentations and our method also obtains state-of-the-art ejection fraction estimation
-
-![](./figures/GCN_MobileNet2_single_frame.mp4)
+EF is computed simultaneously to segmentations and our method also obtains state-of-the-art ejection fraction estimation.
 
 ## Paper
 This is the source code for MICCAI 2022 paper: [Light-weight spatio-temporal graphs for segmentation and ejection fraction prediction in cardiac ultrasound](link_to_arxiv)
 
 ## The EchoGraphs model architecture
- ![plot](./figures/NetworkOverview.png)
+EchoGraphs provides a framework for graph-based contour detection for medical ultrasound. 
+The repository includes model configurations for
+1) predicting the contour of the left ventricle in single ultrasound images (single-frame GCN)
+2) predicting two contours of the ED and ES frame and the corresponding EF value for ultrasound sequences with known ED/ES frame (multi-frame GCN)
+3) predicting the EF values of arbitrary ultrasound sequences alongside with the occurence of ED and ES and the corresponding frames (multi-frame GCN, extension indicated in grey in the figure)
+
+![plot](./figures/NetworkOverview.png)
 
 ## Dataset
 The proposed methods were trained and evaluated using the EchoNet dataset which consists of 10.030 echocardiac ultrasound sequences that were de-identified and made publicly available. The usage of those datasets requires registration and is shared with a non-commerical data use agreement.
@@ -41,6 +45,10 @@ See [INSTALL.md/](./INSTALL.md) for environment setup.
 ## Getting stated
 See [GETTING_STARTED.md](./GETTING_STARTED.md) to get started with training and testing the echographs model. 
 
+## Results 
+[<img src="./figures/GCN_MobileNet2_single_frame.gif" width="800"/>](./figures/GCN_MobileNet2_single_frame.gif)
+
+These examples show video sequences with model prediction. Although the single frame Echograph was only trained on the keyframes ED (end diastole) and ES (end systole) it produces accurate and consistent predictions across all other frames.
 
 ## Citation
 If you feel helpful of this work, please cite it.
