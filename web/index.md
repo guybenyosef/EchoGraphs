@@ -2,122 +2,64 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Abstract
 
-[Link to another page](./another-page.html).
+#### Motivation
+Accurate and consistent predictions of echocardiography parameters are important for cardiovascular diagnosis and 
+treatment. In particular, segmentations of the left ventricle can be used to derive ventricular volume, ejection 
+fraction (EF) and other relevant measurements.
 
-There should be whitespace between paragraphs.
+#### Summary 
+ In this paper we propose a new automated method called EchoGraphs for predicting ejection fraction and segmenting the 
+ left ventricle by detecting anatomical keypoints. Models for direct coordinate regression based on Graph Convolutional 
+ Networks (GCNs) are used to detect the keypoints. GCNs can learn to represent the cardiac shape based on local 
+ appearance of each keypoint, as well as global spatial and temporal structures of all keypoints combined. 
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+####  Results
 
-# Header 1
+We evaluate our EchoGraphs model on the EchoNet benchmark dataset. Compared to semantic segmentation, GCNs show accurate
+segmentation and improvements in robustness and inference run-time. EF is computed simultaneously to segmentations and 
+our method also obtains state-of-the-art ejection fraction estimation.
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+## Article
 
-## Header 2
+The paper is accepted for publication in the 2022 International Conference on Medical Image Computing and Computer 
+Assisted Intervention. The paper is available [on arXiv here](TBD). 
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+If you find the work interesting, please cite it:
 
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+Citation: __TBD__
 
 
-### Definition lists can be used with HTML syntax.
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+## Supplementary Materials
 
-```
-The final element.
-```
+Appendices referenced in the article are [available here](TBD)
+
+# Data
+
+The paper relied on the EchoNet dataset which is [available from Stanford here](https://echonet.github.io/dynamic/index.html). 
+We would like to thank the authors [(Ouyang et. al, 2020)](https://www.nature.com/articles/s41586-020-2145-8) for making these 
+resources available. 
+
+
+
+# Code
+
+The code is available [on GitHub](https://github.com/guybenyosef/EchoGraphs)
+
+
+## Authors
+
+Authors: Sarina Thomas<sup>1</sup>, Andrew Gilbert<sup>2</sup>, and Guy Ben-Yosef<sup>3,*</sup>
+
+
+
+1: University of Oslo, Oslo, NO
+
+2: GE Vingmed Ultrasound, Oslo, NO
+
+3: GE Research, Niskayuna, New York, USA
+
+*: Corresponding author: guy.ben-yosef@ge.com
