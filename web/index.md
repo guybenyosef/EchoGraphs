@@ -24,18 +24,21 @@ our method also obtains state-of-the-art ejection fraction estimation.
 ## Article
 
 The paper is accepted for publication in the 2022 International Conference on Medical Image Computing and Computer 
-Assisted Intervention. The paper is available [on arXiv here](TBD). 
+Assisted Intervention. A pre-print is available [on arXiv here](https://arxiv.org/abs/2207.02549). 
 
 If you find the work interesting, please cite it:
 
-Citation: __TBD__
+Citation: 
+
+S. Thomas, A. Gilbert, and G. Ben-Yosef, “Light-weight spatio-temporal graphs for segmentation and ejection fraction 
+prediction in cardiac ultrasound”, International Conference on Medical Image Computing and Computer-Assisted 
+Intervention. Springer, Cham, 2022.
 
 
 
 
-## Supplementary Materials
-
-Appendices referenced in the article are [available here](TBD)
+[//]: # (## Supplementary Materials)
+[//]: # (Appendices referenced in the article are [available here]&#40;TBD&#41;)
 
 # Data
 
