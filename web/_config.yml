@@ -1,0 +1,6 @@
+title: EchoGraphs
+logo: /assets/img/logo_only_img.png
+description: Light-weight spatio-temporal graphs for segmentation and ejection fraction prediction in cardiac ultrasound
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-minimal
