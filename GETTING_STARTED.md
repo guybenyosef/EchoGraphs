@@ -12,10 +12,18 @@ In this file necessary steps are described to run a training for EchoGraphs on t
 If you want to train the EchoGraph model with the EchoNet data, you need to register on the [echonet dataset webpage](https://echonet.github.io/dynamic/) first, agree to the data sharing agreement and download the data. Then you can run the preprocess script providing the data folder to preprocess the original echonet data into a format that is readable by the training code provided in this repository. This script will use the images and the .csv sheet to create training images and labels as well as txt files that store all filenames for training, validation and test according to the splits provided by the EchoNet authors.
 40 keypoints are extracted from the .csv file indicated as X1 X2 Y1 Y2 excluding the first two points since they are the apex and basal point and not necessarily part of the contour. Invalid annotations (annotations with multiple structures that were not intended for the LV contouring task) are excluded. Further, the EF, ED volume, ES volume, ED frame index and ES frame index are extracted and stored in a npz file. Some preprocessing functions like i.e. the video reader function are taken from the EchoNet repository. The script assumes that you have set the global variables in CONST.py already to your personal data and code folders. Otherwise the train and validation files are not stored correctly.
 
-## Use your own data 
-Here we explain which steps are necessary to create a new dataset that is compatible with EchoGraphs
+## Run training using config files
+This framework is built on the use of ConfigNodes that can be conviniently loaded using .yaml files. Those config files allow the user to set up own configurations and changing configurations by parsing parameters on the command line.
 
-tba
+Training can be started by executing following command: 
+
+```python train.py --config_file files/configs/Train_single_frame.yaml TRAIN.BATCH_SIZE 8```
+
+which executes the train script with parameters specified in the Train_single_frame config and changes the batch size to 8.
+In configs/defaults.py you can see an overview on all default parameters that can be modified by custom yaml files.
+
+The training script can be started with various parameters (all specified in the config files) to adjust the model or the hyperparameter to fit your needs.
+You can select different models (i.e. CNNGCN for the single frame GCN), different backbones (i.e. mobilenet2 for a pretrained mobilenet version 2) and different datasets. We also integrated different augmentation bundles and achieved best results with the configuration 'strongkeep'. You can further select the probability of the applied augmentation.
 
 ## Overview different models
 - GCNCNN 
@@ -68,15 +76,18 @@ In the following all default parameters are listed that are also used for paper 
     learning_rate = 1e-4
     augmentation_probability = 0.90
     
-## Run training 
-```python train.py ```
-
-The training script can be started with various parameters to adjust the model or the hyperparameter to fit your needs.
-You can select different models (i.e. CNNGCN for the single frame GCN), different backbones (i.e. mobilenet2 for a pretrained mobilenet version 2) and different datasets. We also integrated different augmentation bundles and achieved best results with the configuration 'strongkeep'. You can further select the probability of the applied augmentation.
 
 You can monitor your results using tensorboard. Depending on your model choice, the mean kpts (averaged over all keypoints), ef (regressed value) and sd (classified frame) error can be tracked for validation. 
 
-## Run interference
-```python eval.py --weights checkpoint.pth ```
+## Run evaluation
+```python eval.py --config_file files/configs/Eval_Plot.yaml```
 
-The interference script needs a checkpoint (pth weight file) as input and runs the model with the assigned dataloader and weights over the entire test set. 
+The evaluation script needs a checkpoint (pth weight file set under EVAL.WEIGHTS) as input and runs the model with the assigned dataloader and weights over the entire test set. 
+
+## Run inference 
+tba
+
+## Use your own data 
+Here we explain which steps are necessary to create a new dataset that is compatible with EchoGraphs
+
+tba
