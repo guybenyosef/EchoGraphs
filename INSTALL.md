@@ -12,7 +12,7 @@
 - tensorboard: `pip install tensorboard`
 - matplotlib: `pip install matplotlib`
 - PIL (Pillow): `pip install Pillow`
-- sacred: `pip install sacred` 
+- FvCore: 'pip install fvcore'
 - scipy: `pip install scipy`
 
 Now the installation is finished, run the pipeline with [GETTING_STARTED.md](./GETTING_STARTED.md)
