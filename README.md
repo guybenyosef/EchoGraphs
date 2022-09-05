@@ -52,18 +52,21 @@ These examples show video sequences with model prediction. Although the single f
 
 ## Acknowledgements
 
-* The spiral convolution implementation is adapted from the repo Neural3DMM
+- The spiral convolution implementation is adapted from the repo Neural3DMM
 
 Bouritsas, G. et al.: Neural 3D Morphable Models: Spiral Convolutional Networks for 3D 
-Shape Representation Learning and Generation, ICCV, 2019 https://github.com/gbouritsas/Neural3DMM
+Shape Representation Learning and Generation, ICCV, 2019 
+https://github.com/gbouritsas/Neural3DMM
 
 - The regression multi-layer perceptron is inspired by the repo UVT
 
-Reynaud et al.: Ultrasound Video Transformers (UVT) for Cardiac Ejection Fraction Estimation, MICCAI, 2021 https://github.com/HReynaud/UVT
+Reynaud et al.: Ultrasound Video Transformers (UVT) for Cardiac Ejection Fraction Estimation, MICCAI, 2021
+https://github.com/HReynaud/UVT
 
 - For evaluation and preprocessing of the networks methods from the echonet-dynamic repo were used.
 
-Ouyang et al.: Video-based AI for beat-to-beat assessment of cardiac function, Nature, 2020 https://echonet.github.io/dynamic/index.html#code
+Ouyang et al.: Video-based AI for beat-to-beat assessment of cardiac function, Nature, 2020 
+https://echonet.github.io/dynamic/index.html#code
 
 
 ## Citation
