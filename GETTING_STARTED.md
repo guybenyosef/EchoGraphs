@@ -28,9 +28,19 @@ You can select different models (i.e. CNNGCN for the single frame GCN), differen
 ## Overview different models
 - GCNCNN 
 
-- EFNet
+This is a single frame model which is trained on single images (ED and ES) with a GCN and an image encoder backbone.
+
+- EFNet 
+
+This network is a direct regression network of the EF that is trained on 16-frames of the heart cycle. No graph network is involved.
+
+- EFKptsNet
+
+This network includes a spatio-temporal GCN and a regression module which predicts both the EF and the kpts of two frames. It is trained on 16-frames of a heart cycle with known ED/ES
 
 - EFKptsNetSD
+
+This network includes a classifier for identifying keyframes in an arbitrary sequence and also the EF and the kpts of the key frames. It is trained with a sequence of 16 frames and arbitrary starting points
 
 ## Overiew Configurations and default parameter
 In the following all default parameters are listed that are also used for paper evaluation. 
@@ -50,11 +60,12 @@ In the following all default parameters are listed that are also used for paper 
 
 2) Multi-frame approach with known ED/ES
 
-    dataset = 'echonet_cycle'
-    model = 'EFNet'
+
+    model = 'EFKptsNet'
     input_size = 112
-    augmentation_type = "strong_echo_cycle"
     backbone = 'r3d_18'
+    dataset = 'echonet_cycle'
+    augmentation_type = "strong_echo_cycle"
     loss = 'L2'
     num_frames = 16
     batch_size = 4
@@ -77,10 +88,13 @@ In the following all default parameters are listed that are also used for paper 
     augmentation_probability = 0.90
     
 
-You can monitor your results using tensorboard. Depending on your model choice, the mean kpts (averaged over all keypoints), ef (regressed value) and sd (classified frame) error can be tracked for validation. 
+## Monitor training 
+You can monitor your results using tensorboard. Depending on your model choice, the mean kpts (averaged over all keypoints), ef (regressed value) and sd (classified frame) error can be tracked for validation.
+
+```tensorboard --bind_all --load_fast=false --logdir= PATH_TO_EXPERIMENT_DIRECTORY```
 
 ## Run evaluation
-```python eval.py --config_file files/configs/Eval_Plot.yaml```
+```python eval.py --config_file files/configs/Eval_Plot.yaml EVAL.WEIGHTS=PATH_TO_WEIGHT_FILE```
 
 The evaluation script needs a checkpoint (pth weight file set under EVAL.WEIGHTS) as input and runs the model with the assigned dataloader and weights over the entire test set. 
 
