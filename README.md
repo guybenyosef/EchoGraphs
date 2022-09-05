@@ -50,8 +50,24 @@ See [GETTING_STARTED.md](./GETTING_STARTED.md) to get started with training and 
 
 These examples show video sequences with model prediction. Although the single frame Echograph was only trained on the keyframes ED (end diastole) and ES (end systole) it produces accurate and consistent predictions across all other frames.
 
+## Acknowledgements
+
+* The spiral convolution implementation is adapted from the repo Neural3DMM
+
+Bouritsas, G. et al.: Neural 3D Morphable Models: Spiral Convolutional Networks for 3D 
+Shape Representation Learning and Generation, ICCV, 2019 https://github.com/gbouritsas/Neural3DMM
+
+- The regression multi-layer perceptron is inspired by the repo UVT
+
+Reynaud et al.: Ultrasound Video Transformers (UVT) for Cardiac Ejection Fraction Estimation, MICCAI, 2021 https://github.com/HReynaud/UVT
+
+- For evaluation and preprocessing of the networks methods from the echonet-dynamic repo were used.
+
+Ouyang et al.: Video-based AI for beat-to-beat assessment of cardiac function, Nature, 2020 https://echonet.github.io/dynamic/index.html#code
+
+
 ## Citation
-If you feel helpful of this work, please cite it.
+Please consider citing our work if you find it useful:
 
 ```
 @inproceedings{echographs,
