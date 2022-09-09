@@ -1,0 +1,15 @@
+TRAIN:
+  BATCH_SIZE: 4
+  EPOCHS: 100000
+  DATASET: 'echonet_cycle'
+  INPUT_SIZE: 112
+MODEL:
+  NAME: 'EFKptsNet'
+  BACKBONE: 'r3d_18'
+  LOSS_FUNC: ['L2']
+AUG:
+  METHOD: 'strong_echo_cycle'
+  PROB: 0.90
+SOLVER:
+  BASE_LR: 0.0001
+NUM_FRAMES : 16

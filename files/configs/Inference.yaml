@@ -1,0 +1,5 @@
+INF:
+  MODE: 'folder_sequence'
+  WEIGHTS: 'C:/dev/experiments/echonet/logs/echonet40/CNNGCNV3/mobilenet2/831115114/weights_echonet40_CNNGCNV3_best_kptsErr.pth'
+  INPUT: 'C:/dev/data/darwin/ultrasound/view-rec-2-0-2d_2ch_features_for_vr/images/'
+  OUTPUT: "C:/dev/experiments/"

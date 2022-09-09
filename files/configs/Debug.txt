@@ -1,0 +1,16 @@
+TRAIN:
+  BATCH_SIZE: 4
+  EPOCHS: 100000
+  DATASET: 'debug'
+  INPUTSIZE: 112
+
+MODEL:
+  NAME: 'CNNGCNV3'
+  BACKBONE: 'resnet50'
+  LOSS: 'L2'
+AUG:
+  METHOD: 'strongkeep_echo'
+  PROB: 0.90
+SOLVER:
+  BASE_LR: 0.0001
+

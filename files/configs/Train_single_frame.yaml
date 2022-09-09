@@ -1,0 +1,14 @@
+TRAIN:
+  BATCH_SIZE: 128
+  EPOCHS: 10000
+  DATASET: 'echonet40'
+  INPUT_SIZE: 112
+MODEL:
+  NAME: 'CNNGCNV3'
+  BACKBONE: 'mobilenet2'
+  LOSS_FUNC: ['L2']
+AUG:
+  METHOD: 'strongkeep'
+  PROB: 0.90
+SOLVER:
+  BASE_LR: 0.0001
