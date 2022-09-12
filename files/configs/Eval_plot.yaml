@@ -1,0 +1,3 @@
+EVAL:
+  EXAMPLES_TO_PLOT: 10
+  WEIGHTS: 'C:/dev/experiments/echonet/logs/echonet40/CNNGCNV3/mobilenet2/831115114/weights_echonet40_CNNGCNV3_best_kptsErr.pth'

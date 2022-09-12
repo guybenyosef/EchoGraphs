@@ -1,0 +1,3 @@
+TRAIN:
+  BATCH_SIZE: 4
+  DATASET: 'debug'
