@@ -4,7 +4,7 @@ TRAIN:
   DATASET: 'echonet_cycle'
   INPUT_SIZE: 112
 MODEL:
-  NAME: 'EFKptsNet'
+  NAME: 'EFGCN'
   BACKBONE: 'r3d_18'
   LOSS_FUNC: ['L2']
 AUG:

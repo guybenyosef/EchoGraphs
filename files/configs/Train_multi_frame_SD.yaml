@@ -4,7 +4,7 @@ TRAIN:
   DATASET: 'echonet_random'
   INPUT_SIZE: 112
 MODEL:
-  NAME: 'EFKptsNetSD'
+  NAME: 'EFGCNSD'
   BACKBONE: 'r3d_18'
   LOSS_FUNC: ['L2', 'CrossEnt']
 AUG:

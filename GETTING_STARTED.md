@@ -36,11 +36,19 @@ This network is a direct regression network of the EF that is trained on 16-fram
 
 - EFKptsNet
 
-This network includes a spatio-temporal GCN and a regression module which predicts both the EF and the kpts of two frames. It is trained on 16-frames of a heart cycle with known ED/ES
+This network includes a kpts regression module and a regression module which predicts both the EF and the kpts of two frames. It is trained on 16-frames of a heart cycle with known ED/ES.
 
 - EFKptsNetSD
 
-This network includes a classifier for identifying keyframes in an arbitrary sequence and also the EF and the kpts of the key frames. It is trained with a sequence of 16 frames and arbitrary starting points
+This network includes a classifier for identifying keyframes in an arbitrary sequence and also the EF and the kpts of the key frames. It is trained with a sequence of 16 frames and arbitrary starting points. The kpts are regressed with an MLP.
+
+- EFGCN
+
+This network includes a spatio-temporal GCN and a regression module which predicts both the EF and the kpts of two frames. It is trained on 16-frames of a heart cycle with known ED/ES
+
+- EFGCNSD
+
+This network includes a spatio-temporal GCN and a classifier for identifying keyframes in an arbitrary sequence and also the EF and the kpts of the key frames. It is trained with a sequence of 16 frames and arbitrary starting points
 
 ## Overiew Configurations and default parameter
 In the following all default parameters are listed that are also used for paper evaluation. 
@@ -61,7 +69,7 @@ In the following all default parameters are listed that are also used for paper 
 2) Multi-frame approach with known ED/ES
 
 
-    model = 'EFKptsNet'
+    model = 'EFGCN'
     input_size = 112
     backbone = 'r3d_18'
     dataset = 'echonet_cycle'
@@ -76,7 +84,7 @@ In the following all default parameters are listed that are also used for paper 
 3) Multi-frame approach with unknown ED/ES
 
     dataset = 'echonet_random'
-    model = 'EFKptsNetSD'
+    model = 'EFGCNSD'
     input_size = 112
     augmentation_type = "strong_echo_cycle"
     backbone = 'r3d_18'
